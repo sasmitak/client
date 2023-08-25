@@ -28,7 +28,7 @@ export function Task() {
             <div className="mb-2">
                 <Link className="btn btn-info" to="/addtask">Add New Task</Link>
             </div>
-            <table className="table table-hover">
+            <table className="table table-hover" style={{ height: '600px' , width:'700px' }}>
                 <thead>
                     <tr>
                         <th>Title</th>
