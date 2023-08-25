@@ -50,29 +50,31 @@ export function Register()
     }
 
     return(
-        <div>
+        <div className="container-fluid">
             <h3>Register User</h3>
+            <div className="form-content" style={{ height: '600px',width:'300px' }}>
             <form onSubmit={formik.handleSubmit}>
                 <dl>
                     <dt>User Id</dt>
-                    <dd><input type="text" onKeyUp={VerifyUserId} name="UserId" onChange={formik.handleChange} /></dd>
+                    <dd><input type="text" className="form-control mt-2" onKeyUp={VerifyUserId} name="UserId" onChange={formik.handleChange} /></dd>
                     <dd className={colorClass}>{userError}</dd>
                     <dt>User Name</dt>
-                    <dd><input type="text" name="UserName" onChange={formik.handleChange} /></dd>
+                    <dd><input type="text" className="form-control mt-2" name="UserName" onChange={formik.handleChange} /></dd>
                     <dt>Password</dt>
-                    <dd><input type="password" name="Password" onChange={formik.handleChange} /></dd>
+                    <dd><input type="password" className="form-control mt-2" name="Password" onChange={formik.handleChange} /></dd>
                     <dt>Age</dt>
-                    <dd><input type="number" name="Age" onChange={formik.handleChange} /></dd>
+                    <dd><input type="number" className="form-control mt-2" name="Age" onChange={formik.handleChange} /></dd>
                     <dt>Email</dt>
-                    <dd><input type="email" name="Email" onChange={formik.handleChange} /></dd>
+                    <dd><input type="email" className="form-control mt-2" name="Email" onChange={formik.handleChange} /></dd>
                     <dt>Mobile</dt>
-                    <dd><input type="text" name="Mobile" onChange={formik.handleChange} /></dd>
+                    <dd><input type="text" className="form-control mt-2" name="Mobile" onChange={formik.handleChange} /></dd>
                 </dl>
-                <button>Register</button>
+                <button className="btn btn-dark">Register</button>
                 <p>
-                    <Link to="/login">Existing User Login</Link>
+                    <Link className="text-dark" to="/login">Existing User Login</Link>
                 </p>
             </form>
+            </div>
         </div>
     )
 }

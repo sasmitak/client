@@ -35,20 +35,22 @@ export function Login()
         }
     })
     return(
-        <div>
+        <div className="container-fluid">
+            <div className="form-content" style={{ height: '600px',width:'300px' }}>
             <h3>User Login</h3>
             <form onSubmit={formik.handleSubmit}>
                 <dl>
                     <dt>User Id</dt>
-                    <dd><input type="text" name="UserId" onChange={formik.handleChange} /></dd>
+                    <dd><input type="text" name="UserId" onChange={formik.handleChange} className="form-control mt-2" /></dd>
                     <dt>Password</dt>
-                    <dd><input type="password" name="Password" onChange={formik.handleChange} /></dd>
+                    <dd><input type="password" name="Password" onChange={formik.handleChange} className="form-control mt-2" /></dd>
                 </dl>
-                <button>Login</button>
+                <button className="btn btn-light">Login</button>
                 <p>
-                    <Link to="/register">New User Register</Link>
+                    <Link className="text-dark" to="/register">New User Register</Link>
                 </p>
             </form>
+            </div>
         </div>
     )
 }

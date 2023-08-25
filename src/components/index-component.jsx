@@ -8,6 +8,7 @@ import { AddTask } from "./add-task";
 import { DeleteTask } from "./delete-task";
 import { EditTask } from "./edit-task";
 import { TaskDetails } from "./details-task";
+import './styling.css';
 
 export function TaskIndex()
 {
@@ -20,16 +21,16 @@ export function TaskIndex()
             <section className="mt-2 row">
                 <nav className="col-3">
                     <div>
-                        <Link to="home">Home</Link>
+                        <Link className="text-dark" to="home">Home</Link>
                     </div>
                     <div>
-                        <Link to="register">Register</Link>
+                        <Link className="text-dark" to="register">Register</Link>
                     </div>
                     <div>
-                        <Link to="login">Login</Link>
+                        <Link className="text-dark" to="login">Login</Link>
                     </div>
                     <div>
-                        <Link to="tasks">Task</Link>
+                        <Link className="text-dark" to="tasks">Task</Link>
                     </div>
                 </nav>
                 <main className="col-9">
