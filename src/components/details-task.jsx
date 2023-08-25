@@ -14,7 +14,7 @@ export function TaskDetails(){
         }).then(response=>{
             setTasks(response.data);
         })
-    },[]);
+    },[params.id]);
 
     return(
         <div>

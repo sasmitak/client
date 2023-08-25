@@ -22,7 +22,7 @@ export function Login()
             })
             .then(response=>{
                  for(var user of response.data){
-                    if(user.UserId==customer.UserId && user.Password==customer.Password){
+                    if(user.UserId===customer.UserId && user.Password===customer.Password){
                         alert("login successfully");
                         navigate("/tasks");
                         break;

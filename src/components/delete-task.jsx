@@ -25,7 +25,6 @@ export function DeleteTask() {
             })
             .catch(error => {
                 console.error("Error deleting task:", error);
-                // Handle the error (display an error message, etc.)
             });
     };
 

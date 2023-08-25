@@ -1,10 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useCookies } from "react-cookie";
 import { useNavigate, Link } from "react-router-dom";
 
 export function Task() {
-    const [cookies, setCookie, removeCookie] = useCookies();
     const [tasks, setTasks] = useState([]);
     const navigate = useNavigate();
 
