@@ -25,7 +25,7 @@ export function AddTask()
 
     return(
         <div>
-            <h2>Add New Video</h2>
+            <h2>Add New Task</h2>
             <form onSubmit={formik.handleSubmit}>
                 <dl>
                     <dt>Task Id</dt>
