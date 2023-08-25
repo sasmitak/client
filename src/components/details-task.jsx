@@ -7,10 +7,12 @@ import { Link, useParams } from "react-router-dom";
 export function TaskDetails(){
     const [tasks, setTasks] = useState([{id:0, title:'', description:'',completed:false}]);
     const params = useParams();
+    const baseurl = "https://mern-auth-app-2cxs.onrender.com";
+
     useEffect(()=>{
         axios({
             method: 'get',
-            url: `http://127.0.0.1:5566/videos/${params.id}`
+            url: `${baseurl}/videos/${params.id}`
         }).then(response=>{
             setTasks(response.data);
         })

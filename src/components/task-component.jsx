@@ -5,11 +5,13 @@ import { useNavigate, Link } from "react-router-dom";
 export function Task() {
     const [tasks, setTasks] = useState([]);
     const navigate = useNavigate();
+    const baseurl = "https://mern-auth-app-2cxs.onrender.com";
+
 
     useEffect(() => {
         axios({
             method: "get",
-            url: "http://127.0.0.1:5000/tasks"
+            url: `${baseurl}/tasks`
         })
             .then((response) => {
                 setTasks(response.data);

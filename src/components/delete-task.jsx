@@ -5,10 +5,11 @@ import { useParams, useNavigate } from "react-router-dom";
 export function DeleteTask() {
     const params = useParams();
     const navigate = useNavigate();
+    const baseurl = "https://mern-auth-app-2cxs.onrender.com";
     const [task, setTask] = useState({});
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:5000/tasks/${params.id}`)
+        axios.get(`${baseurl}/tasks/${params.id}`)
             .then(response => {
                 setTask(response.data[0]);
             })
@@ -18,7 +19,7 @@ export function DeleteTask() {
     }, [params.id]);
 
     const handleDelete = () => {
-        axios.delete(`http://127.0.0.1:5000/deletetask/${params.id}`)
+        axios.delete(`${baseurl}/deletetask/${params.id}`)
             .then(response => {
                 console.log("Task deleted successfully");
                 navigate("/tasks");

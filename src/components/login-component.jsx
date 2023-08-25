@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useFormik } from "formik";
-//import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-//import { useCookies } from "react-cookie";
 
 
 
 export function Login()
 {
     const navigate = useNavigate();
+    const baseurl = "https://mern-auth-app-2cxs.onrender.com";
+
 
     const formik = useFormik({
         initialValues: {
@@ -18,7 +18,7 @@ export function Login()
         onSubmit : customer => {
             axios({
                 method: "get",
-                url: "http://127.0.0.1:5000/customers"
+                url: `${baseurl}/customers`
             })
             .then(response=>{
                  for(var user of response.data){

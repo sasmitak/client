@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export function AddTask() {
     var navigator = useNavigate();
+    const baseurl = "https://mern-auth-app-2cxs.onrender.com";
     const formik = useFormik({
         initialValues: {
             id: 0,
@@ -14,7 +15,7 @@ export function AddTask() {
         onSubmit: (values) => {
             axios({
                 method: "post",
-                url: "http://127.0.0.1:5000/addtask",
+                url: `${baseurl}/addtask`,
                 data: values
             })
             alert(`Task Added Successfully..`);

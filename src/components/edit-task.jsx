@@ -8,11 +8,13 @@ export function EditTask() {
     const [tasks, setTasks] = useState([{ id: 0, title: '', description: '', completed: false }]);
     const params = useParams();
     const navigate = useNavigate();
+    const baseurl = "https://mern-auth-app-2cxs.onrender.com";
+
 
     useEffect(() => {
         axios({
             method: 'get',
-            url: `http://127.0.0.1:5000/tasks/${params.id}`
+            url: `${baseurl}/tasks/${params.id}`
         }).then(response => {
             setTasks(response.data);
         })
@@ -27,7 +29,7 @@ export function EditTask() {
         onSubmit: (values) => {
             axios({
                 method: 'put',
-                url: `http://127.0.0.1:5000/updatetask/${values.id}`,
+                url: `${baseurl}/updatetask/${values.id}`,
                 data: values
                })
                alert("Task Updated");

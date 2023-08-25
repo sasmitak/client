@@ -9,6 +9,8 @@ export function Register()
     const [users, setUsers] = useState([]);
     const [colorClass, setColorClass] = useState('');
     const navigate = useNavigate();
+    const baseurl = "https://mern-auth-app-2cxs.onrender.com";
+
     const formik = useFormik({
         initialValues: {
             "UserId": "",
@@ -21,7 +23,7 @@ export function Register()
         onSubmit : (values) =>{
             axios({
                 method: "post",
-                url: "http://127.0.0.1:5000/registercustomer",
+                url: `${baseurl}/registercustomer`,
                 data: values
             })
             alert("Registered Successfully..");
@@ -32,7 +34,7 @@ export function Register()
     function VerifyUserId(e){
         axios({
             method: "get",
-            url: "http://127.0.0.1:5000/customers"
+            url: `${baseurl}/customers`
         })
         .then(response=> {
             setUsers(response.data);
